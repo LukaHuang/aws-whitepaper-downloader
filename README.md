@@ -18,7 +18,7 @@ Input following command in a terminal to download aws whitepapers.
 aws-whitepaper-downloader all
 ```
 
-Download Files will sort by Category!!
+Downloaded Files will sort by Category!!
 
 ![](https://lh3.googleusercontent.com/-aR3BqUaooKY/WS02Bf4txJI/AAAAAAAAKz4/52kiRy9wrokiWGBzVIwgZDtcQZy5mx8zwCHM/I/14961351293816.jpg)
 
