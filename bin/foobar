@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require "aws_whitepaper_downloader/downloader"
+require 'commander/import'
+
+program :name, 'Aws White Paper Downloader'
+program :version, '1.0.0'
+program :description, 'Stupid command that prints foo or bar.'
+
+command :foo do |c|
+  c.syntax = 'foobar foo'
+  c.description = 'Displays foo'
+  c.action do |args, options|
+    say 'foo'
+  end
+end

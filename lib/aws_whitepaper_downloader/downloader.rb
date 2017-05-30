@@ -6,16 +6,21 @@ module AwsWhitepaperDownloader
     def initialize
     end
 
-
     def run( hash, download_path )
-      download_path = download_path ? download_path : WHITE_PAPPER_ROOT_DIR
+      download_path = download_path ? "#{ download_path }/white pappers" : WHITE_PAPPER_ROOT_DIR
       check_dir_created( nil, download_path )
 
       hash.each_pair do |key, value|
         current_dir = check_dir_created( key, download_path )
+        puts "---------------- current_dir -------------------"
+        puts current_dir
+        puts "-------------------------------------------------"
         case value['type']
         when 'normal'
           Dir.chdir current_dir
+          puts "---------------- Dir.chdir curren_dir -------------------"
+          puts current_dir
+          puts "-------------------------------------------------"
           puts 'normal'
           hash.each_pair do |k1, v1|
             next if k1 == 'type'
@@ -30,6 +35,10 @@ module AwsWhitepaperDownloader
             next if k1 == 'type'
             nested_dir = check_dir_created( k1, current_dir )
             Dir.chdir( nested_dir )
+            puts "---------------- nested_dir -------------------"
+            puts nested_dir
+            puts "------------ㄦ-----------------------------"
+
             v1.each do |k2, v2|
               next if k2 == 'type'
               download( k2, v2,"#{nested_dir}/#{v2}")
@@ -45,7 +54,7 @@ module AwsWhitepaperDownloader
     private
 
     def download( file_name, path, download_dir )
-      unless File.exist? "#{download_dir}/#{file_name}.pdf"
+      unless File.exist? "#{file_name}.pdf"
         `wget "#{file_name}.pdf" #{path}`
       end
     end

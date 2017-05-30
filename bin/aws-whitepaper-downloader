@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/aws_whitepaper_downloader.rb'
+require "aws_whitepaper_downloader/downloader"
+require 'commander/import'
+require "fileutils"
+
+program :name, 'Aws White Paper Downloader'
+program :version, '1.0.0'
+program :description, 'download all whitepaper sorted by category'
+
+command :all do |c|
+  c.syntax = 'aws-whitepaper-downloader all'
+  c.description = ''
+  c.action do |args, options|
+    AwsWhitepaperDownloader.run( Dir.pwd )
+  end
+end
