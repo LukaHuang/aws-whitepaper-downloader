@@ -12,15 +12,9 @@ module AwsWhitepaperDownloader
 
       hash.each_pair do |key, value|
         current_dir = check_dir_created( key, download_path )
-        puts "---------------- current_dir -------------------"
-        puts current_dir
-        puts "-------------------------------------------------"
         case value['type']
         when 'normal'
           Dir.chdir current_dir
-          puts "---------------- Dir.chdir curren_dir -------------------"
-          puts current_dir
-          puts "-------------------------------------------------"
           puts 'normal'
           hash.each_pair do |k1, v1|
             next if k1 == 'type'
@@ -35,9 +29,6 @@ module AwsWhitepaperDownloader
             next if k1 == 'type'
             nested_dir = check_dir_created( k1, current_dir )
             Dir.chdir( nested_dir )
-            puts "---------------- nested_dir -------------------"
-            puts nested_dir
-            puts "------------ㄦ-----------------------------"
 
             v1.each do |k2, v2|
               next if k2 == 'type'
