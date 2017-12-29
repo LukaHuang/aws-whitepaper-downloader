@@ -1,4 +1,3 @@
-require "aws_whitepaper_downloader/version"
 require "aws_whitepaper_downloader/crawler"
 require "aws_whitepaper_downloader/downloader"
 
