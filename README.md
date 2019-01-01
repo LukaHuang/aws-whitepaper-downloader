@@ -1,4 +1,4 @@
-# AwsWhitepaperDownloader
+# AWS Whitepaper Downloader
 
 Aws-whitepaper-downloader is a tiny command-line tool to download all of AWS whitepappers in https://aws.amazon.com/whitepapers/.
 
