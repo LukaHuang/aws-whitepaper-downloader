@@ -15,7 +15,7 @@ $ gem install aws-whitepaper-downloader
 Input following command in a terminal to download aws whitepapers.
 
 ```
-aws-whitepaper-downloader all
+aws-whitepaper-downloader go
 ```
 
 Downloaded Files will sort by Category!!
